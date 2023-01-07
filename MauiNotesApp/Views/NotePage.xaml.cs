@@ -3,13 +3,13 @@ namespace MauiNotesApp.Views;
 [QueryProperty(nameof(ItemId), nameof(ItemId))]
 public partial class NotePage : ContentPage
 { 
-    string _fileName = Path.Combine(FileSystem.AppDataDirectory, "MauiNotes.txt");
+
     public NotePage()
     {
         InitializeComponent();
 
         string appDataPath = FileSystem.AppDataDirectory;
-        string randomFileName = $"{Path.GetRandomFileName()}.MauiNotes.txt";
+        string randomFileName = $"{Path.GetRandomFileName()}.notes.txt";
         LoadNote(Path.Combine(appDataPath, randomFileName));
     }
     public string ItemId
@@ -18,8 +18,10 @@ public partial class NotePage : ContentPage
     }
     private void LoadNote(string fileName)
     {
-        Models.Note noteModel = new Models.Note();
-        noteModel.Filename = fileName;
+        Models.Note noteModel = new()
+        {
+            Filename = fileName
+        };
 
         if (File.Exists(fileName))
         {

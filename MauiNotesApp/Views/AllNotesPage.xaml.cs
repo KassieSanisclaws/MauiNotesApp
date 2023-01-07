@@ -17,7 +17,7 @@ public partial class AllNotesPage : ContentPage
         await Shell.Current.GoToAsync(nameof(NotePage));
     }
 
-    private async void notesCollection_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    private async void NotesCollection_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
         if (e.CurrentSelection.Count != 0)
         {
