@@ -1,4 +1,4 @@
-﻿namespace MauiNotesApp;
+﻿namespace MauiNotesApp.Views;
 
 public partial class MainPage : ContentPage
 {
